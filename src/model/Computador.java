@@ -15,15 +15,22 @@ public final class Computador {
 
     public Computador(int id, int numPortUsb, int numPortSerr) {
         this.setId(id);
-        if (numPortUsb != 0){
-            for (int i = 0; i < numPortUsb; i++) {
+        createPortUsb(numPortUsb);
+        createPortSerr(numPortSerr);
+    }
+ 
+    public void createPortUsb(int num){
+        if (num != 0){
+            for (int i = 0; i < num; i++) {
                 PortUsb usb = new PortUsb(i, "Usb" + i);
                 portaUsb.add(usb);
             }
         }
-        
-        if (numPortSerr != 0){
-            for (int i = 0; i < numPortSerr; i++) {
+    }
+    
+    public void createPortSerr(int num){
+        if (num != 0){
+            for (int i = 0; i < num; i++) {
                 PortSerr serial = new PortSerr("Serial" + i);
                 portaSerial.add(serial);
             }

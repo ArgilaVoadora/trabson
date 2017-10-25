@@ -2,7 +2,6 @@
 package trabsonprog;
 
 import model.Computador;
-
 /**
  *
  * @author joaovitor, jadielsantos, matheussoares
