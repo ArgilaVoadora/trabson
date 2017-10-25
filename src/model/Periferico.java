@@ -1,7 +1,7 @@
 //Repositório: https://github.com/ArgilaVoadora/trabson.git
 package model;
 /**
- *
+ *.
  * @author joaovitor, jadielsantos, matheussoares
  */
 public class Periferico {

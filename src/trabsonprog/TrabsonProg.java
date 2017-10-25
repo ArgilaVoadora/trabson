@@ -9,7 +9,7 @@ import model.Computador;
 public class TrabsonProg {
 
     public static void main(String[] args) {
-        Computador comp = new Computador(1, 3, 3);
+        Computador comp = new Computador(1);
         System.out.println(comp.getPortaSerial().subList(0, 3));
         System.out.println(comp.getPortaUsb().subList(0, 3));
     }
