@@ -7,13 +7,15 @@ import java.util.ArrayList;
  */
 public final class Computador {
     private int id;
-    private int numPortUsb;
-    private int numPortSerr;
     private ArrayList<PortUsb> portaUsb = new ArrayList<>();
     private ArrayList<PortSerr> portaSerial = new ArrayList<>();
 
     public Computador(int id) {
         this.setId(id);
+    }
+    
+    public Computador getComputador(){
+        return this;
     }
  
     public void createPortUsb(int num){

@@ -1,17 +1,46 @@
-//Repositório: https://github.com/ArgilaVoadora/trabson.git argilaviado
+//Repositório: https://github.com/ArgilaVoadora/trabson.git
 package trabsonprog;
 
 import model.Computador;
+import view.ComputadorView;
 /**
  *
  * @author joaovitor, jadielsantos, matheussoares
  */
 public class TrabsonProg {
 
-    public static void main(String[] args) {
-        Computador comp = new Computador(1);
-        System.out.println(comp.getPortaSerial().subList(0, 3));
-        System.out.println(comp.getPortaUsb().subList(0, 3));
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Computador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Computador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Computador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Computador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ComputadorView().setVisible(true);
+                Computador comp = new Computador(1);
+
+            }
+        });
     }
     
 }
