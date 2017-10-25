@@ -1,4 +1,4 @@
-//Repositório: https://github.com/ArgilaVoadora/trabson.git
+//Repositório: https://github.com/ArgilaVoadora/trabson.git argilaviado
 package trabsonprog;
 
 import model.Computador;
