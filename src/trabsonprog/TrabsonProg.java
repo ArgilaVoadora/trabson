@@ -2,7 +2,7 @@ package trabsonprog;
 
 /**
  *
- * @author joaovitor
+ * @author joaovitor, jadielsantos, matheussoares
  */
 public class TrabsonProg {
 
