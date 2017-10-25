@@ -15,5 +15,5 @@ public class PenDrive {
     public void setBytes(int bytes) {
         this.bytes = bytes;
     }
-    //oppa
+    //opp
 }
