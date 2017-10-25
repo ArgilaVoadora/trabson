@@ -14,10 +14,6 @@ public final class Computador {
         this.setId(id);
     }
     
-    public Computador getComputador(){
-        return this;
-    }
- 
     public void createPortUsb(int num){
         if (num != 0){
             for (int i = 0; i < num; i++) {
