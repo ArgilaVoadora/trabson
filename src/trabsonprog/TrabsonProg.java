@@ -1,4 +1,7 @@
+//Repositório: https://github.com/ArgilaVoadora/trabson.git
 package trabsonprog;
+
+import model.Computador;
 
 /**
  *
@@ -6,11 +9,10 @@ package trabsonprog;
  */
 public class TrabsonProg {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // Alteração teste
+        Computador comp = new Computador(1, 3, 3);
+        System.out.println(comp.getPortaSerial().subList(0, 3));
+        System.out.println(comp.getPortaUsb().subList(0, 3));
     }
     
 }

@@ -16,14 +16,16 @@ public final class Computador {
     public Computador(int id, int numPortUsb, int numPortSerr) {
         this.setId(id);
         if (numPortUsb != 0){
-            for (int i = 0; i <= numPortUsb; i++) {
+            for (int i = 0; i < numPortUsb; i++) {
                 PortUsb usb = new PortUsb(i, "Usb" + i);
+                portaUsb.add(usb);
             }
         }
         
         if (numPortSerr != 0){
-            for (int i = 0; i <= numPortSerr; i++) {
+            for (int i = 0; i < numPortSerr; i++) {
                 PortSerr serial = new PortSerr("Serial" + i);
+                portaSerial.add(serial);
             }
         }
     }

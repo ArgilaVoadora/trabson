@@ -7,20 +7,19 @@ package model;
 public class PortUsb {
     private int id;
     private String nome;
-    private PenDrive PD;
-    private HDExterno DH;
+    private Periferico PF;
     
     public PortUsb(int id, String nome) {
         this.setId(id);
         this.setNome(nome);
     }
     
-    public void conectar(PenDrive PD){
-        this.PD = PD;
+    public void conectar(Periferico PF){
+        this.PF = PF;
     }
 
     public void desconectar(){
-       this.PD = null;
+       this.PF = null;
     }
             
     public int getId() {
