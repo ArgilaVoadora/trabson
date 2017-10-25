@@ -12,10 +12,8 @@ public final class Computador {
     private ArrayList<PortUsb> portaUsb = new ArrayList<>();
     private ArrayList<PortSerr> portaSerial = new ArrayList<>();
 
-    public Computador(int id, int numPortUsb, int numPortSerr) {
+    public Computador(int id) {
         this.setId(id);
-        createPortUsb(numPortUsb);
-        createPortSerr(numPortSerr);
     }
  
     public void createPortUsb(int num){
