@@ -1,11 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+
 /**
  *
  * @author joaovitor, jadielsantos, matheussoares
  */
 public final class Computador {
+
     private int id;
     private ArrayList<PortUsb> portaUsb = new ArrayList<>();
     private ArrayList<PortSerr> portaSerial = new ArrayList<>();
@@ -13,21 +15,35 @@ public final class Computador {
     public Computador(int id) {
         this.setId(id);
     }
-    
-    public void createPortUsb(int num){
-        if (num != 0){
-            for (int i = 0; i < num; i++) {
-                PortUsb usb = new PortUsb(i, "Usb" + i);
-                portaUsb.add(usb);
+
+    public void createPortUsb(int num) {
+        if (num != 0) {
+            if (portaUsb.size() == 0) {
+                for (int i = 0; i < num; i++) {
+                    PortUsb usb = new PortUsb(i, "Usb" + i);
+                    portaUsb.add(usb);
+                }
+            } else {
+                for (int i = 0; i < num; i++) {
+                    PortUsb usb = new PortUsb(i, "Usb" + portaUsb.size());
+                    portaUsb.add(usb);
+                }
             }
         }
     }
-    
-    public void createPortSerr(int num){
-        if (num != 0){
-            for (int i = 0; i < num; i++) {
-                PortSerr serial = new PortSerr("Serial" + i);
-                portaSerial.add(serial);
+
+    public void createPortSerr(int num) {
+        if (num != 0) {
+            if (portaSerial.size() == 0) {
+                for (int i = 0; i < num; i++) {
+                    PortSerr pserr = new PortSerr(i, "Serial" + i);
+                    portaSerial.add(pserr);
+                }
+            } else {
+                for (int i = 0; i < num; i++) {
+                    PortSerr pserr = new PortSerr(i, "Serial" + portaSerial.size());
+                    portaSerial.add(pserr);
+                }
             }
         }
     }
@@ -55,6 +71,5 @@ public final class Computador {
     public void setPortaSerial(ArrayList<PortSerr> portaSerial) {
         this.portaSerial = portaSerial;
     }
-    
-    
+
 }

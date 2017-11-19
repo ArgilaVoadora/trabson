@@ -37,8 +37,6 @@ public class TrabsonProg {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ComputadorView().setVisible(true);
-                Computador comp = new Computador(1);
-
             }
         });
     }

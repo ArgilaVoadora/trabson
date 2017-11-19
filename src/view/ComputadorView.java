@@ -2,6 +2,7 @@ package view;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 import model.Computador;
 import model.PortUsb;
 
@@ -71,6 +72,14 @@ public class ComputadorView extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jTable1MouseExited(evt);
             }
         });
         jScrollPane2.setViewportView(jTable1);
@@ -216,15 +225,40 @@ public class ComputadorView extends javax.swing.JFrame {
         if (jRadioButton1.isSelected()) {
             comp.createPortUsb(jSlider1.getValue());
         }
-        
+
         if (jRadioButton2.isSelected()) {
-            comp.createPortUsb(jSlider1.getValue());
+            comp.createPortSerr(jSlider1.getValue());
         }
+
+        String[] nomesColunas = {"Porta", "Periférico Conectado"};
+
+        ArrayList <String[]> lista = new ArrayList<>();
+        for (int i = 0; i < comp.getPortaUsb().size(); i++) {
+            lista.add(new String[]{"" + comp.getPortaUsb().get(i).getNome(), "" + comp.getPortaUsb().get(i).getNomePeriferico()});
+        }
+        
+        for (int i = 0; i < comp.getPortaSerial().size(); i++) {
+            lista.add(new String[]{"" + comp.getPortaSerial().get(i).getNome(), "" + comp.getPortaSerial().get(i).getNomePeriferico()});
+        }
+
+        DefaultTableModel model = new DefaultTableModel(
+                lista.toArray(new String[lista.size()][]), nomesColunas);
+
+        jTable1.setModel(model);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
         jLabel2.setText("" + jSlider1.getValue());
     }//GEN-LAST:event_jSlider1StateChanged
+
+    private void jTable1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseExited
+F    }//GEN-LAST:event_jTable1MouseExited
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -257,7 +291,6 @@ public class ComputadorView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ComputadorView().setVisible(true);
-                Computador comp = new Computador(1);
             }
         });
     }

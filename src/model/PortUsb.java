@@ -21,6 +21,18 @@ public class PortUsb {
     public void desconectar(){
        this.PF = null;
     }
+
+    public Periferico getPF() {
+        return PF;
+    }
+    
+    public String getNomePeriferico() {
+        return "Nenhum periférico conectado!";
+    }
+
+    public void setPF(Periferico PF) {
+        this.PF = PF;
+    }
             
     public int getId() {
         return id;
